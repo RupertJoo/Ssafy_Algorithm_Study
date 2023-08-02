@@ -1,7 +1,7 @@
 # import sys
 # sys.stdin = open("./refs/input_swea_1209_hw.txt")
 
-def swea1209():
+def swea1209_hw():
     T = 10
     N = 100
     _ = input()
@@ -37,4 +37,4 @@ def swea1209():
     pass
 
 if __name__ == "__main__":
-    swea1209()
+    swea1209_hw()
