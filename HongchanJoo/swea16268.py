@@ -3,7 +3,7 @@
 def swea16268():
 
     for tc in range(1, int(input()) + 1):
-    # sys.stdin = open("./inputs/input_swea_16268.txt") # 로컬에 저장된 인풋파일을 불러온다
+    # sys.stdin = open("./refs/input_swea_16268.txt") # 로컬에 저장된 인풋파일을 불러온다
     # for tc in range(1, int(sys.stdin.readline()) + 1): # 메서드 input()을 sys.stdin.readline()으로 대체한다.
         N, M = map(int, input().split()) # 배열의 크기 N, M
         arr = list(list(map(int, input().split()))for _ in range(N)) # 리스트 컴프리헨션으로 한줄로 구현 가능하다.
