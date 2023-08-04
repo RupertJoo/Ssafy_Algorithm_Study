@@ -1,0 +1,8 @@
+potato
+1
+sweet_potato
+3
+pumpkin
+7
+onion
+999
