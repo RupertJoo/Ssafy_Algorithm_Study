@@ -7,5 +7,5 @@ if __name__ == "__main__":
     #  x, ..., 1
     #  1 to x 소수 찾기 primes
     #  2중 for 문: m, n - r; primes
-    #  가장 안쪽 for 문에서 xx % prime == 0인 xx를 가산 
+    #  가장 안쪽 for 문에서 xx % prime == 0인 xx를 가산한다
     boj28138()

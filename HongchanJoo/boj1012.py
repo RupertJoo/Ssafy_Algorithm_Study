@@ -38,7 +38,6 @@ def boj1012():
     for tc in range(1, int(input()) + 1):
         m, n, k = map(int, input().split())
         cabbage = [[0] * m for _ in range(n)]
-        worm = 0
         list_cabbage = [[None, None] for _ in range(k)]
         for i in range(k):
             x_cabbage, y_cabbage = map(int, input().split())
