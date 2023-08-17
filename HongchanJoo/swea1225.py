@@ -1,3 +1,11 @@
+def peek():
+    global cq
+    global front
+    global len_cq
+
+    return cq[(front + 1) % len_cq]
+
+
 def enCQ(item):
     global len_cq
     global cq
@@ -36,37 +44,38 @@ def isFull():
     return (rear + 1) % len_cq == front
 
 
-
 def swea1225():
     global len_cq
     global cq
     global rear
     global front
+
     while True:
         try:
             tc = int(input())
-
             cq = [0] + list(map(int, input().split()))
             len_cq = len(cq)
             front = 0
             rear = len_cq - 1
-            i = 1
-            while cq[rear] != 0:
+            i = 0
+            isBreak = False
+            while peek() - ((i % 5) + 1) > 0:
                 temp = deCQ()
-                if temp - i < 0:
+                if temp - (i % 5) + 1 < 0:
                     temp = 0
+                    isBreak = True
                 else:
-                    temp -= i
+                    temp -= (i % 5) + 1
                 enCQ(temp)
-                i += 1
 
+                if isBreak:
+                    break
+                i += 1
+            cq[front] = 0
             print(f"#{tc}", end=' ')
-            # print(*cq)
-            for ii in range(len_cq - 1):
+            for ii in range(2, len_cq + 1):
                 print(cq[(front+ii) % len_cq], end=" ")
             print()
-            # print("www")
-
         except:
             return
 
