@@ -1,45 +1,48 @@
 def calTree(i):
     global n
     global tree
-    global ans
+    global child_left
+    global child_right
 
-    if i <= n:
-        calTree(2 * i)
-        calTree(2 * i + 1)
-        if 2 * i <= n:
-            if tree[i][0] in ["+", "-", "*", "/"]:
-                oper_left = tree[tree[i][1]]
-                oper_right = tree[tree[i][2]]
-                print(oper_left)
-                print(oper_right)
-                if tree[i][0] == "+":
-                    tree[i] = oper_left + oper_right
-                elif tree[i][0] == "-":
-                    tree[i] = oper_left - oper_right
-                elif tree[i][0] == "*":
-                    tree[i] = oper_left * oper_right
-                elif tree[i][0] == "/":
-                    tree[i] = oper_left // oper_right
-    # print(*tree)
+    if i <= n and child_left[i]:
+        calTree(child_left[i])
+        if child_right[i]:
+            calTree(child_right[i])
+
+        if tree[i] in ["+", "-", "*", "/"]:
+            oper_left = tree[child_left[i]]
+            oper_right = tree[child_right[i]]
+            if tree[i] == "+":
+                tree[i] = oper_left + oper_right
+            elif tree[i] == "-":
+                tree[i] = oper_left - oper_right
+            elif tree[i] == "*":
+                tree[i] = oper_left * oper_right
+            elif tree[i] == "/":
+                tree[i] = oper_left // oper_right
 
 
 def swea1232():
     global n
     global tree
-    global ans
+    global child_left
+    global child_right
 
     t = 10
     for tc in range(1, t + 1):
         n = int(input())
         tree = [0] * (n + 1)
+        child_left = [0] * (n + 1)
+        child_right = [0] * (n + 1)
         for _ in range(n):
             arr = list(input().split())
             len_arr = len(arr)
             if len_arr == 4:
-                tree[int(arr[0])] = [arr[1], int(arr[2]), int(arr[3])]
+                tree[int(arr[0])] = arr[1]
+                child_left[int(arr[0])] = int(arr[2])
+                child_right[int(arr[0])] = int(arr[3])
             else:
                 tree[int(arr[0])] = int(arr[1])
-        ans = 0
         calTree(1)
         print(f"#{tc} {tree[1]}")
 
