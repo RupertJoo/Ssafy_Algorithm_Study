@@ -1,81 +1,122 @@
 def calDist(n, m, azi_i, dist_i, azi, dist):
-    move_ccw = [[-1, 0], [0, -1], [1, 0], [0, 1]]
+    move_ccw = [[-1, 0], [0, -1], [0, 1], [1, 0]]
     dist_min_ccw = 0
-    move_cw = [[-1, 0], [0, 1], [1, 0], [0, -1]]
+    move_cw = [[1, 0], [0, 1], [0, -1], [-1, 0]]
     dist_min_cw = 0
 
-    if azi == 1:
+    azi_ccw = azi
+    r = c = None
+    if azi_ccw == 1:
         r, c = 0, dist
-    elif azi == 2:
+    elif azi_ccw == 2:
+        r, c = m, dist
+    elif azi_ccw == 3:
         r, c = dist, 0
-    elif azi == 3:
-        r, c = m - 1, dist
-    elif azi == 4:
-        r, c = dist, n - 1
+    elif azi_ccw == 4:
+        r, c = dist, n
 
     azi_ccw = azi
+    # print(f" azi  = {azi_ccw}, r = {r}, c = {c}")
     is_break = False
 
     if (azi_ccw % 4) == (azi_i % 4) and dist == dist_i:
-        pass
+        return 0
     else:
-        for _ in range(4):
+        for _ in range(5):
             r_nxt = r + move_ccw[azi_ccw % 4][0]
             c_nxt = c + move_ccw[azi_ccw % 4][1]
-            while 0 <= r_nxt < m and 0 <= c_nxt < n:
-                if ((azi_ccw % 4) % 2) == 0:
-                    if r_nxt == dist_i:
+            while 0 <= r_nxt <= m and 0 <= c_nxt <= n:
+                if (azi_ccw % 4) == 0 or (azi_ccw % 4) == 3:
+                    # print("세로")
+                    if r_nxt == dist_i and (azi_ccw % 4) == (azi_i % 4):
+                        dist_min_ccw += 1
                         is_break = True
                         break
                 else:
-                    if c_nxt == dist_i:
+                    # print("가로")
+                    if c_nxt == dist_i and (azi_ccw % 4) == (azi_i % 4):
+                        dist_min_ccw += 1
                         is_break = True
                         break
+                if is_break:
+                    break
                 r = r_nxt
                 c = c_nxt
+                # print(f" while azi  = {azi_ccw}, r = {r}, c = {c}")
                 r_nxt = r + move_ccw[azi_ccw % 4][0]
                 c_nxt = c + move_ccw[azi_ccw % 4][1]
                 dist_min_ccw += 1
             if is_break:
-                 break
-            azi_ccw = (azi_ccw + 1) % 4
-            continue
-
+                break
+            # azi_ccw = (azi_ccw + 1) % 4
+            if azi_ccw % 4 == 0:
+                azi_ccw = 1
+            elif azi_ccw % 4 == 1:
+                azi_ccw = 3
+            elif azi_ccw % 4 == 2:
+                azi_ccw = 0
+            elif azi_ccw % 4 == 3:
+                azi_ccw = 2
 
     azi_cw = azi
+    r = c = None
+    if azi_cw == 1:
+        r, c = 0, dist
+    elif azi_cw == 2:
+        r, c = m, dist
+    elif azi_cw == 3:
+        r, c = dist, 0
+    elif azi_cw == 4:
+        r, c = dist, n
+    # print(f" azi  = {azi_ccw}, r = {r}, c = {c}")
     is_break = False
-
     if (azi_cw % 4) == (azi_i % 4) and dist == dist_i:
-        pass
+        return 0
     else:
-        for _ in range(4):
-            r_nxt = r + move_ccw[azi_cw % 4][0]
-            c_nxt = c + move_ccw[azi_cw % 4][1]
-            while 0 <= r_nxt < m and 0 <= c_nxt < n:
-                if ((azi_cw % 4) % 2) == 0:
-                    if r_nxt == dist_i:
+        for _ in range(5):
+            r_nxt = r + move_cw[azi_cw % 4][0]
+            c_nxt = c + move_cw[azi_cw % 4][1]
+            while 0 <= r_nxt <= m and 0 <= c_nxt <= n:
+                if (azi_cw % 4) == 0 or (azi_cw % 4) == 3:
+                    # print("세로")
+                    if r_nxt == dist_i and (azi_cw % 4) == (azi_i % 4):
+                        dist_min_cw += 1
                         is_break = True
                         break
                 else:
-                    if c_nxt == dist_i:
+                    # print("가로")
+                    if c_nxt == dist_i and (azi_cw % 4) == (azi_i % 4):
+                        dist_min_cw += 1
                         is_break = True
                         break
+                if is_break:
+                    break
                 r = r_nxt
                 c = c_nxt
-                r_nxt = r + move_ccw[azi_cw % 4][0]
-                c_nxt = c + move_ccw[azi_cw % 4][1]
-                dist_min_ccw += 1
+                # print(f" while azi  = {azi_ccw}, r = {r}, c = {c}")
+                r_nxt = r + move_cw[azi_cw % 4][0]
+                c_nxt = c + move_cw[azi_cw % 4][1]
+                dist_min_cw += 1
             if is_break:
-                 break
-            azi_cw = (azi_cw - 1) % 4
-            continue
+                break
+            # azi_ccw = (azi_ccw + 1) % 4
+            if azi_cw % 4 == 0:
+                azi_cw = 2
+            elif azi_cw % 4 == 1:
+                azi_cw = 0
+            elif azi_cw % 4 == 2:
+                azi_cw = 3
+            elif azi_cw % 4 == 3:
+                azi_cw = 1
+
+
 
     if dist_min_cw > dist_min_ccw:
-        dist_min = dist_min_ccw
+         dist_min = dist_min_ccw
     else:
-        dist_min = dist_min_cw
+         dist_min = dist_min_cw
 
-    return dist_min_ccw
+    return dist_min
 
 
 def boj2654():
@@ -89,7 +130,7 @@ def boj2654():
     ans = 0
     for azi_i, dist_i in arr:
         x = calDist(n, m, azi_i, dist_i, azi, dist)
-        print(x)
+        # print(x)
         ans += x
 
         # print(azi_i, dist_i)
