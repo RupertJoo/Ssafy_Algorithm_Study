@@ -18,41 +18,43 @@ def swea1242_alter():
     for tc in range(1, int(input()) + 1):
         n, m = map(int, input().split())
         arr = set([input()[:m] for _ in range(n)])
-        set_code = set()
+        list_code = []
         ans = 0
         for code_hex in arr:
-            hex_to_dec = int(code_hex, 16)
-            if hex_to_dec:
-                str_bin = ""
-                for i in range(3, -1, -1):
-                    str_bin += "1" if hex_to_dec & (1 << i) else "0"
+            str_bin = ""
+            for hx in code_hex:
+                hx_to_dec = int(hx, 16)
+                for j in range(3, -1, -1):
+                    str_bin += "1" if hx_to_dec & (1 << j) else "0"  # 16진수 문자열를 이진수 문자열로 변환
+            if not int(str_bin, 2):  # 변화를 마친 전체 문자열이 0으로만 이루어져 있을 때 다음 행으로 순회한다.
+                continue
+            else:
+                str_bin = str_bin.rstrip("0")  # 문자열 끝의 "1"부터 읽기에 오른쪽"0"을 전부 지운다.
                 ratio = [0] * 4
                 code = []
-                for c_bin in range(len(str_bin) - 1, -1, -1):
-                    if c_bin == "1" and ratio[2] == 0:
+                for j in range(len(str_bin) - 1, -1, -1):
+                    if str_bin[j] == "1" and ratio[2] == 0:
                         ratio[3] += 1
-                    elif c_bin == "0" and ratio[1] == 0:
+                    elif str_bin[j] == "0" and ratio[1] == 0:
                         ratio[2] += 1
-                    elif c_bin == "1" and ratio[0] == 0:
+                    elif str_bin[j] == "1" and ratio[0] == 0:
                         ratio[1] += 1
-                    elif c_bin == "0" and str_bin[c_bin - 1] == "1":
-
-                        key_decode = tuple((i // min(ratio)) for i in ratio[1:])
-                        num_decode = dict_code.get(key_decode)
-                        code.append(num_decode)
-
+                    elif str_bin[j] == "0" and str_bin[j - 1] == "1":
+                        num = dict_code.get(tuple((b // min(ratio[1:])) for b in ratio[1:]))
+                        ratio = [0] * 4
+                        code.append(num)
                         if len(code) == 8:
                             code_reversed = code[::-1]
                             odd = code_reversed[0] + code_reversed[2] + code_reversed[4] + code_reversed[6]
                             even = code_reversed[1] + code_reversed[3] + code_reversed[5] + code_reversed[7]
-                            if (odd * 3 + even) % 10 == 0 and code not in set_code:
-                                print(odd + even)
+                            if (odd * 3 + even) % 10 == 0 and code not in list_code:
                                 ans += odd + even
-                                set_code.add(code)
+                                list_code.append(code)
+                            code = []
         print(f"#{tc} {ans}")
-
-
 
 
 if __name__ == "__main__":
     swea1242_alter()
+
+

@@ -8,9 +8,6 @@ def swea1288():
             str_mul = str(n * ans)
             for s in str_mul:
                 list_count[int(s)] = 1
-
-            # print(f"{str_mul}, {list_count}")
-
         print(f"#{tc} {str_mul}")
 
 
