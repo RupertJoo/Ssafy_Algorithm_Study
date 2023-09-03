@@ -12,7 +12,6 @@ def rotateCube(cmd, cube):
     list_x = []
 
     if d == "+":
-        # print("cw")
         for r in range(3):
             for c in range(3):
                 temp_obj[c][2 - r] = cube[obj][r][c]
@@ -25,21 +24,14 @@ def rotateCube(cmd, cube):
         list_x_cw = [list_x_cw.pop()] + list_x_cw
         list_idx_cw = copy.deepcopy(list_idx)
         list_idx_cw = [list_idx_cw.pop()] + list_idx_cw
-        # print(list_x)
-        # print(list_x_cw)
-        # print(list_idx)
-        # print(list_idx_cw)
         for i in range(4):
             x = list_x[i]
             x_nxt = list_x_cw[i]
             for rc_now, rc_nxt in zip(list_idx[i], list_idx_cw[i]):
                 r_now, c_now = rc_now[0], rc_now[1]
                 r_nxt, c_nxt = rc_nxt[0], rc_nxt[1]
-                # tp = copy.deepcopy(cube[x_nxt][r_nxt][c_nxt])
                 cube[x][r_now][c_now] = cube_copy[x_nxt][r_nxt][c_nxt]
-                # cube[x][r_now][c_now] = tp
     elif d == "-":
-        # print("ccw")
         for r in range(3):
             for c in range(3):
                 temp_obj[r][c] = cube[obj][c][2 - r]
@@ -52,20 +44,13 @@ def rotateCube(cmd, cube):
         list_x_ccw = list_x_ccw + [list_x_ccw.pop(0)]
         list_idx_ccw = copy.deepcopy(list_idx)
         list_idx_ccw = list_idx_ccw + [list_idx_ccw.pop(0)]
-        # print(list_x)
-        # print(list_x_ccw)
-        # print(list_idx)
-        # print(list_idx_ccw)
         for i in range(4):
             x = list_x[i]
             x_nxt = list_x_ccw[i]
             for rc_now, rc_nxt in zip(list_idx[i], list_idx_ccw[i]):
                 r_now, c_now = rc_now[0], rc_now[1]
                 r_nxt, c_nxt = rc_nxt[0], rc_nxt[1]
-                # tp = copy.deepcopy(cube[x_nxt][r_nxt][c_nxt])
                 cube[x][r_now][c_now] = cube_copy[x_nxt][r_nxt][c_nxt]
-                # cube[x][r_now][c_now] = tp
-
     return cube
 
 
@@ -81,41 +66,9 @@ def boj5373():
         list_cmd = input().split()
         for cmd in list_cmd:
             cube = rotateCube(cmd, cube)
-            # for c in cube["U"]:
-            #     print(*c, sep="")
-            # print("-----")
-            # print(cube)
         for c in cube["U"]:
             print(*c, sep="")
 
 
 if __name__ == "__main__":
     boj5373()
-
-#
-# x= [[1,2,3],[4,5,6],[7,8,9]]
-# x_cw=[[0] * 3 for _ in range(3)]
-# x_ccw=[[0] * 3 for _ in range(3)]
-# for r in range(3):
-#     for c in range(3):
-#         x_cw[c][2 - r] = x[r][c]
-#         x_ccw[r][c] = x[c][2 - r]
-#
-#
-# for i in x_cw:
-#     print(*i)
-# print("------")
-# for i in x_ccw:
-#     print(*i)
-# ######################
-# dict_index = {"o": {"f": [1,2,3],"d": [4,5,6]}, "x": {"z": [10,20,30],"v": [40,50,60]}}
-# a = []
-# b = []
-# for i,j in dict_index.items():
-#     a.append(i)
-#     b.append(j)
-# print(a)
-# print(b)
-# x = {"D":{1}, "R":{2}, "U":{3}, "L":{4}}
-# for i, j in x.items():
-#     print(i, j)
