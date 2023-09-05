@@ -8,7 +8,6 @@ def boj18111():
     h_ans = 256  #  다른 어떤 경우에서도 이보다 높이가 낮다.
     for _ in range(n):
         arr.extend(list(map(int, input().split())))  # 이 경우 가로 세로 정보는 중요하지 않다.
-
     heights = [0] * 257  # i번 index에 2개 있다 -> 구역 내에 높이가 i인 땅이 2개 있다!
     for h in arr:
         heights[h] += 1
