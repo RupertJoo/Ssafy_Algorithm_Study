@@ -26,7 +26,6 @@ def boj11725():
         node_s, node_e = map(int, input().split())
         lst_adj[node_s].append(node_e)
         lst_adj[node_e].append(node_s)
-        # print(lst_adj)
     parents = find_parent(1, n, lst_adj)
     for p in parents[2:]:
         sys.stdout.write(str(p) + "\n")
