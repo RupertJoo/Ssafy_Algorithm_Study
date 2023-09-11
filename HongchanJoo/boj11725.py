@@ -21,7 +21,6 @@ def find_parent(x, n, lst_adj):
 
 def boj11725():
     n = int(input())
-
     lst_adj = [[] for _ in range(n + 1)]
     for _ in range(n - 1):
         node_s, node_e = map(int, input().split())
