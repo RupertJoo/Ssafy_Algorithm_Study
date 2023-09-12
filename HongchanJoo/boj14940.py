@@ -1,21 +1,3 @@
-"""
-15 15
-2 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 0 0 0 0 0
-1 1 1 1 1 1 1 1 1 1 0 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 0 1 0 0 0
-1 1 1 1 1 1 1 1 1 1 0 1 1 1 1
-"""
 import sys
 from collections import deque
 input = sys.stdin.readline
@@ -37,15 +19,12 @@ def bfs(arr, r_start, c_start, n, m):
             r_nxt = r_now + dr
             c_nxt = c_now + dc
             if in_arr(r_nxt, c_nxt, n, m) and visited[r_nxt][c_nxt] == -1 and arr[r_nxt][c_nxt]:
-                # print(q)
                 q.append((r_nxt, c_nxt))
                 visited[r_nxt][c_nxt] = visited[r_now][c_now] + 1
-    # print(arr[13][12])
     for r in range(n):
         for c in range(m):
             if not arr[r][c]:
                 visited[r][c] = 0
-            # print(c)
     return visited
 
 
@@ -60,7 +39,6 @@ def boj14940():
                 break
         if is_break:
             break
-    # print(r, c)
     visited = bfs(arr, r, c, n, m)
     for a in visited:
         print(*a)
