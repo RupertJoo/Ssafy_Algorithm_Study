@@ -17,7 +17,7 @@ def boj1927():
                     heap[parent], heap[child] = heap[child], heap[parent]
                 child = parent
                 parent //= 2
-            # print(heap)
+            print(heap)
         else:
             if not tail:
                 print(0)
@@ -34,7 +34,7 @@ def boj1927():
                         heap[parent], heap[child] = heap[child], heap[parent]
                     parent = child
                     child *= 2
-                # print(heap)
+                print(heap)
 
 
 
