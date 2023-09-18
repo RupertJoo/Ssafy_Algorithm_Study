@@ -31,9 +31,9 @@
     </tr>
     <tr height="140px">
         <td align="center" width="130px">
-            <a href="https://github.com/le-monaaa"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/101534897?v=4"/></a>
+            <a href="https://github.com/minwookkim115"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/139411503?v=4"/></a>
             <br />
-            <a href="https://github.com/le-monaaa">이유빈
+            <a href="https://github.com/minwookkim115">김민욱
             </a>
         </td>
         <td align="center" width="130px">
@@ -55,6 +55,18 @@
     </tr>
 
 </table>
+
+<br><br>
+[![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=markrla)](https://solved.ac/markrla)
+[![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=kials1)](https://solved.ac/kials1)
+[![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=jgh05168)](https://solved.ac/jgh05168)
+[![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=qhszoek77)](https://solved.ac/qhszoek77)
+[![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=minwookkim)](https://solved.ac/minwookkim)
+[![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=maruck3)](https://solved.ac/maruck3)
+[![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=yun0730)](https://solved.ac/yun0730)
+[![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=RupertJoo)](https://solved.ac/RupertJoo)
+
+<br><br>
 
 ## 3. 진행 방식
 
@@ -78,6 +90,10 @@
 | 1주  | [후위 표기식2](https://www.acmicpc.net/problem/1935) | [올바른 괄호](https://school.programmers.co.kr/learn/courses/30/lessons/12909) | [N과 M](https://www.acmicpc.net/problem/15650) | [골드바흐의 추측](https://www.acmicpc.net/problem/9020) | [숨바꼭질 6](https://www.acmicpc.net/problem/17087) | [좌표 정렬하기](https://www.acmicpc.net/problem/11650) /[듣보잡](https://www.acmicpc.net/problem/1764) |
 | 2주  | [재귀함수가 뭔가요? ](https://www.acmicpc.net/problem/17478) | [H-Index](https://school.programmers.co.kr/learn/courses/30/lessons/42747#fn1) | [부분수열의 합](https://www.acmicpc.net/problem/1182) | [프로세스](https://school.programmers.co.kr/learn/courses/30/lessons/42587) | [하노이 탑](https://www.acmicpc.net/problem/1914) | [다리를 지나는 트럭](https://school.programmers.co.kr/learn/courses/30/lessons/42583) /[가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/11053) |
 | 3주  | [오목 ](https://www.acmicpc.net/problem/2615) | [N과 M(4)](https://www.acmicpc.net/problem/15652) | [가장 먼 노드](https://school.programmers.co.kr/learn/courses/30/lessons/49189) | [섬의개수](https://www.acmicpc.net/problem/4963) | [적록색약](https://www.acmicpc.net/problem/10026) | [투에-모스 문자열](https://www.acmicpc.net/problem/18222) /[포도주 시식](https://www.acmicpc.net/problem/2156) |
+| 4주  | [IM 대비 문제집](https://www.acmicpc.net/workbook/view/7091)|
+| 5주  | [센서 ](https://www.acmicpc.net/problem/2212) | [강의실 배정](https://www.acmicpc.net/problem/11000) | [호석이 두 마리 치킨](https://www.acmicpc.net/problem/21278) | [A -> B](https://www.acmicpc.net/problem/16953) | [링크와 스타트](https://www.acmicpc.net/problem/15661) | [완전 이진 트리](https://www.acmicpc.net/problem/9934) /[마법사 상어와 비바라기](https://www.acmicpc.net/problem/21610) |
+| 6주  | [ 카잉 달력 ](https://www.acmicpc.net/problem/6064) | [벽 부수고 이동하기 ](https://www.acmicpc.net/problem/2206) | [로봇 시뮬레이션](https://www.acmicpc.net/problem/2174) | [음식물 피하기](https://www.acmicpc.net/problem/1743) | [ 치즈 ](https://www.acmicpc.net/problem/2638) | [ACM Craft](https://www.acmicpc.net/problem/1005) /[부등호](https://www.acmicpc.net/problem/2529) |
+| 7주  | [ 쿼드 트리](https://www.acmicpc.net/problem/1992) | [동전 ](https://www.acmicpc.net/problem/9084) | [카트 구매하기](https://www.acmicpc.net/problem/11052) | [상어 초등학교 ](https://www.acmicpc.net/problem/21608) | [ 맥주 마시면서 걸어가기 ](https://www.acmicpc.net/problem/9205) | [ 미로만들기 ](https://www.acmicpc.net/problem/2665) /[Puyo Puyo](https://www.acmicpc.net/problem/11559) |
 
 ## 4. 학습 사이트
 * [프로그래머스 고득점 kit](https://school.programmers.co.kr/learn/challenges?tab=algorithm_practice_kit)
