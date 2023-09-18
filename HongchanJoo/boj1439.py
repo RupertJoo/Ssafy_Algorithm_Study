@@ -1,24 +1,24 @@
+import sys
+input = sys.stdin.readline
+
 def boj1439():
-    text = input()
-    num_0 = 0
-    count_0 = 0
-    num_1 = 0
-    count_1 = 0
-
-    chr_now = text[0]
-    for i in text[1:]:
-        if chr_now != i:
-            chr_now = i
-            if i == '0':
-                num_0 += 1
-            else:
-                num_1 += 1
-    if num_0 < num_1:
-        result = num_0
+    text = input().rstrip()
+    cnt_0 = 0
+    cnt_1 = 0
+    x = int(text[0])
+    if x:
+        cnt_0 -= 1
     else:
-        result = num_1
+        cnt_1 -= 1
 
-    print(result)
+    for i in range(len(text)-1):
+        int_t = int(text[i])
+        if int_t ^ int(text[i + 1]):
+            if int_t:
+                cnt_1 += 1
+            else:
+                cnt_0 += 1
+    print(max(cnt_0, cnt_1))
 
 
 if __name__ == "__main__":
