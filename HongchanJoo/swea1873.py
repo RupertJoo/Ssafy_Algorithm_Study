@@ -1,14 +1,14 @@
 import sys
 sys.stdin = open("./refs/input_swea_1873.txt")
-
+input = sys.stdin.readline
 
 def swea1873():
     for tc in range(1, int(sys.stdin.readline()) + 1):
-    # for tc in int(input()):
-        h, w = map(int, input().split())
-        arr = list(list(input()) for _ in range(h))
-        n = input()
-        commands = list(input())
+    # for tc in int(input().rstrip()):
+        h, w = map(int, input().rstrip().split())
+        arr = list(list(input().rstrip()) for _ in range(h))
+        n = input().rstrip()
+        commands = list(input().rstrip())
 
         terrain = ['.', '*', '#', '-']
         tank = ['^', 'v', '<', '>']
